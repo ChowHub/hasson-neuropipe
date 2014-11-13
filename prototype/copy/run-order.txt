@@ -1,0 +1,29 @@
+# run-order.txt describes the your fMRI scanning protocol
+# original author: mason simon (mgsimon@princeton.edu)
+# modified for conquest format by janice@princeton.edu
+# list your runs in any order - the filenames must match what's in the NII folder
+# each line must contain 2 filenames separated by 1 space: original_filename new_filename
+# do not include extensions, *.nii.gz is assumed 
+# mprage will generate 3 files; co5*mprage.nii is the one you keep, name
+# this one t1_mprage_192 and it will be used for analyses
+1-1-1scout scout01
+2-1-1scout scout02
+2-2-1scout scout03
+2-3-1scout scout04
+2-4-1scout scout05
+2-5-1scout scout06
+3-1-1scout scout07
+3-2-1scout scout08
+3-3-1scout scout09
+4-1-1scout scout10
+4-2-1scout scout11
+4-3-1scout scout12
+5-1-1longmprage9x9x9 orient2_t1_mprage_192
+6-1-1flash75x75x4 t1_flash01
+7-1-1epi3x3x415spiemanaudio soundcheck01
+8-1-1epi3x3x415spiemanaudio soundcheck02
+9-1-1epi3x3x415spiemanaudio epi_tzmovie
+10-1-1epi3x3x415spiemanaudio epi_pieman_intact01
+11-1-1epi3x3x415spiemanaudio epi_pieman_scram01
+co5-1-1longmprage9x9x9 t1_mprage_192
+o5-1-1longmprage9x9x9 orient1_t1_mprage_192

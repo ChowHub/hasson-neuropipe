@@ -1,0 +1,21 @@
+18-35 year old subjects with normal or corrected-to-normal vision participated
+in an fMRI experiment to investigate interactions between long-term and working 
+memory. They lay in a Skyra 3T scanner with a mirror on the head coil reflecting
+projected stimuli. TR length was 1.5s. Eyetracking data were also collected.
+
+Task 1: TZ Movie
+The scan begins with a short eyetrack calibration; subjects fixate on 5 dots in 
+sequence (3s per dot). They then watch a 25-minute movie (The Twilight Zone).
+One group of subjects views the entire TZ movie. Another group of subjects viewed
+the first part (10 minutes) of the movie the previous day, and now views 10
+minutes of a different movie concatenated with the last 15 minutes of the
+TZ movie. Another group of subjects views the same concatenated movie, but did
+not view any movie the day before (ie they never see part 1 of the TZ movie).
+The scan is 1030 TRs.
+
+Task 2: Pieman audio story
+Subjects listen to a 7-minute spoken story (Pieman) four times (four separate
+scans). For two scans the story is intact, and for two scans the story is
+temporally scrambled. The order of conditions is intact, scramble, intact, scramble.
+
+
