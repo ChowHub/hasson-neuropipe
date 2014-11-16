@@ -1,3 +1,4 @@
 #!/bin/bash
 source globals.sh
-feat $FSF_DIR/preproc01.fsf
+# Run all .fsf files in fsf directory
+for fsf in $(ls -d $FSF_DIR/*.fsf); do feat "$fsf"; done

@@ -22,6 +22,8 @@ echo "== beginning analysis of $SUBJ at $(date) =="
 # run your high-level analysis scripts here
 echo "== beginning image preprocessing =="
 #bash scripts/pre_feat_prep.sh
+bash scripts/render-fsf-templates.sh
+python scripts/render-fsf-tr.py $FSF_DIR/preproc_key.txt
 bash scripts/preproc.sh
 
 popd > /dev/null   # return to the directory this script was run from, quietly

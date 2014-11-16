@@ -40,13 +40,13 @@ function render_firstlevel {
 }
 
 render_firstlevel $FSF_DIR/preproc.fsf.template \
-                  $PREPROC_DIR/preproc01.feat \
+                  $PREPROC_DIR/pieman_intact.feat \
                   ../../data/MNI152_T1_2mm_brain \
-                  $NIFTI_DIR/${SUBJ}_epi_tzmovie \
+                  $NIFTI_DIR/${SUBJ}_pieman_intact.nii.gz \
                   $NIFTI_DIR/${SUBJ}_t1_flash01_brain.nii.gz \
                   $NIFTI_DIR/${SUBJ}_t1_mprage_192_brain.nii.gz \
                   . \
                   . \
                   $EV_DIR/preproc01 \
-                  > $FSF_DIR/preproc01.fsf
+                  > $FSF_DIR/pieman_intact.fsf
 
