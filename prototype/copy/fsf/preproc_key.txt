@@ -1,2 +1,2 @@
-preproc_filename01: nifti_filename
-preproc_filename02: nifti_filename
+pieman_intact01: epi_pieman_intact01
+pieman_scram01:  epi_pieman_scram01

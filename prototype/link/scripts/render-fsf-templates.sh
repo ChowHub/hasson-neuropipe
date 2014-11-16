@@ -40,13 +40,24 @@ function render_firstlevel {
 }
 
 render_firstlevel $FSF_DIR/preproc.fsf.template \
-                  $PREPROC_DIR/pieman_intact.feat \
+                  $PREPROC_DIR/pieman_intact01.feat \
                   ../../data/MNI152_T1_2mm_brain \
-                  $NIFTI_DIR/${SUBJ}_pieman_intact.nii.gz \
+                  $NIFTI_DIR/${SUBJ}_epi_pieman_intact01.nii.gz \
                   $NIFTI_DIR/${SUBJ}_t1_flash01_brain.nii.gz \
                   $NIFTI_DIR/${SUBJ}_t1_mprage_192_brain.nii.gz \
                   . \
                   . \
                   $EV_DIR/preproc01 \
-                  > $FSF_DIR/pieman_intact.fsf
+                  > $FSF_DIR/pieman_intact01.fsf
 
+
+render_firstlevel $FSF_DIR/preproc.fsf.template \
+                  $PREPROC_DIR/pieman_scram01.feat \
+                  ../../data/MNI152_T1_2mm_brain \
+                  $NIFTI_DIR/${SUBJ}_epi_pieman_scram01.nii.gz \
+                  $NIFTI_DIR/${SUBJ}_t1_flash01_brain.nii.gz \
+                  $NIFTI_DIR/${SUBJ}_t1_mprage_192_brain.nii.gz \
+                  . \
+                  . \
+                  $EV_DIR/preproc01 \
+                  > $FSF_DIR/pieman_scram01.fsf
