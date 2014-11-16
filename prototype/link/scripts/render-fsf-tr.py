@@ -1,5 +1,10 @@
 #!/bin/python
-import pandas
+"""
+
+"""
+# TODO fix dictreader not generate but make list
+
+import csv
 import yaml, re, difflib, sys
 from glob import glob
 from os import listdir, path, remove
@@ -9,24 +14,31 @@ else: raise Exception("need to give preproc_key as argument")
 all_nii = listdir(datadir)
 
 all_preprocs = yaml.load(open(preproc_key))     # fsf_file_name: nifti_name
-df = pandas.read_csv(datadir+'/TR_summary.txt', sep='\t', header=None)
+# Load TR file
+df = csv.DictReader(open(datadir+'/TR_summary.txt'), 
+                    delimiter='\t', 
+                    fieldnames= ['nii_name', 'dim', 'TRs'])
+
+df = [row for row in df]  # iterate over rows, put into list
+
 changeTR = {}
 
 # If nifti name contains a preproc entry, get that row from TR_summary
 crnt_preprocs = {}
 for k, v in all_preprocs.items():
-    match = [row for ii, row in df.iterrows() if v in row[0]]
+    match = [row for row in df if v in row['nii_name']]
     assert len(match) <= 1
     if match: crnt_preprocs[k] = match[0]  # add all TR info
 
 # For matches, replace number of volumes in fsf file with correct value
 for k, v in crnt_preprocs.iteritems():
-    print k, ':\t', v[0]
-    print 'TRs','\t', v[2]
+    print k, ':\t', v['nii_name']
+    print 'TRs','\t', v['TRs']
     raw_input('press enter to change fsf templates')
     fsf_file = path.join('fsf', k+'.fsf')
     with open(fsf_file, 'r') as f: template = f.read()
-    new_template = re.sub(r'(set fmri\(npts\)).*', r'\1 '+str(v[2]), template)
+    new_template = re.sub(r'(set fmri\(npts\)).*', r'\1 '+str(v['TRs']), template)
+
     #show changes between original and new
     diff = difflib.unified_diff(template.splitlines(), new_template.splitlines())
     for line in diff: print line
